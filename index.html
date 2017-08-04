@@ -1,0 +1,76 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="fstyle.css">
+    <title>Login</title>
+    
+    <script>
+        function svalidate(){
+            var p=document.signup.first.value;
+            var q=document.signup.lasr.value;
+            var r=document.signup.uid.value;
+            var s=document.signup.pwd.value;
+            if(p==null||p==""){
+                alert("Incorrect First name entry");
+                return false;
+            }
+            else if(q==null||q==""){
+                alert("Incorrect Last name entry");
+                return false;
+            }
+            else if(r==null||r==""){
+                alert("Incorrect Username entry");
+                return false;
+            }
+            else if(s==null||s.length<3){
+                alert("Incorrect Password format");
+                return false;
+            }
+            
+        }
+        function lvalidate(){
+            var x=document.login.uid.value;
+            var y=document.login.pwd.value;
+            if(x==null||x==""){
+                alert("Incorrect Username entry");
+                return false;
+            }
+            else if(y==null||y==""){
+                alert("Incorrect Password format");
+                return false;
+        }
+    </script>
+    
+</head>
+<body> 
+
+<div id="title" align="center" >
+        <h1 style="color: #222;float:left;margin-left:44.2%;">Car</h1>
+        <h1 style="color: #fff;margin-left:-0.2%;float:left;">Trend</h1></div>    
+    
+<form action="login.php" method="post" name="login" onsubmit="lvalidate()">    
+<div id="login">
+    <div id="lgtext">LOGIN</div>
+    <div align="center" id="linput"><form>
+        <input type="text" placeholder="Username" class="lbox" name="uid"><br>
+        <input type="password" placeholder="Password" class="lbox" name="pwd">
+        <br><input type="submit" value="login" class="lbut">
+    </form></div>
+    <div class="fgpd" align="center"><a href="#">Forgot Password ?</a></div>
+</div>
+</form>
+
+<form action="signup.php" method="post" name="signup" onsubmit="svalidate()">
+<div id="register">
+    <div id="rgtext">Register Here</div>
+    <div align="center" id="rinput"><form>
+        <input type="text" placeholder="First Name" class="rbox" name="first"><br>
+        <input type="text" placeholder="Last Name" class="rbox" name="last"><br>
+        <input type="text" placeholder="Username" class="rbox" name="uid"><br>
+        <input type="password" placeholder="Password" class="rbox" name="pwd"><br>
+        <br><input type="submit" value="Register" class="rbut">
+    </form></div>
+</div>
+</form>
+
+</body>
+</html>
